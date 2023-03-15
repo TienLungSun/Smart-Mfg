@@ -175,7 +175,8 @@ try:
             time_count = 0
             #ddd.rename(index={j:name[j]})
             #ddd.index = list
-        #st.write(ddd) 
+        st.header('實驗數據')
+        st.write(ddd) 
         list_d = []
         
         flaw = ddd['OVAL'].values.tolist()
@@ -198,28 +199,28 @@ try:
         #observed = [[510, 515, 515], [10, 25, 9]]
 
         #out=stats.chi2_contingency(observed=observed,correction=False)
+        st.header('各實驗數據比較')
         
-        
-        qqqq = pd.DataFrame(columns=list_q)
-        st.write(qqqq)
+        qqqq = pd.DataFrame(columns=list_q, index = list_q)
+        #st.write(qqqq)
         for j in range(count_A):
             for i in range(count_A):
                 observed = ddd_new.loc[[j, i]]
                 #st.write(observed)
                 out=stats.chi2_contingency(observed=observed,correction=False)
                 #st.write(out[1])
-                name_qqqq = list_q[i]
-                list_qqqq = []
+                B = list_q[j]
                 if out[1] >= 0.05:
-                    list_qqqq = list_qqqq + '兩者無顯著差異'
+                    qqqq.iat[j, i] = '兩者無顯著差異'
                 if out[1] < 0.05:
-                    list_qqqq = list_qqqq + '兩者有顯著差異'
-            st.write(list_qqqq)
-            qqqq.loc[j] = list_qqqq
+                    qqqq.iat[j, i] = '兩者有顯著差異'
+        st.write(qqqq)
             
                     #def color(val):
                         #color = 'red'
                         #return 'background-color: %s' % color
+        
+        
                     
             
         
