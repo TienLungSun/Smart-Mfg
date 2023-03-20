@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 from scipy import stats
 
+st.header("Defect rate analysis system")
 with st.sidebar:
     uploaded_files = st.file_uploader('Upload your files',accept_multiple_files=True)
 
