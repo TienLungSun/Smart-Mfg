@@ -211,9 +211,9 @@ try:
                 #st.write(out[1])
                 B = list_q[j]
                 if out[1] >= 0.05:
-                    qqqq.iat[j, i] = '兩者無顯著差異'
+                    qqqq.iat[j, i] = out[1]
                 if out[1] < 0.05:
-                    qqqq.iat[j, i] = '兩者有顯著差異'
+                    qqqq.iat[j, i] = out[1]
         st.write(qqqq)
             
                     #def color(val):
