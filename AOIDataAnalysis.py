@@ -60,10 +60,6 @@ try:
         false = 0
         df1 = df
             #tab1.subheader("確認瑕疵個數")
-            
-            
-            
-            
 
 
         for i in range(count):
@@ -199,7 +195,7 @@ try:
         #observed = [[510, 515, 515], [10, 25, 9]]
 
         #out=stats.chi2_contingency(observed=observed,correction=False)
-        st.header('各實驗數據比較')
+        st.header('卡方統計檢定結果')
         
         qqqq = pd.DataFrame(columns=list_q, index = list_q)
         #st.write(qqqq)
